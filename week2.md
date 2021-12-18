@@ -23,20 +23,6 @@ public {1:SAC:=class} Person {
 
 ```
 
-## JUnit format
-
-Assume that the function `sum(int[])` is already implemented so that it returns the sum of all elements in the array. Fill in the blanks to ensure the syntax is correct and all tests pass.
-
-```java
-@Test
-public void testSum() {
-  int[] data = new int[] {10, 70, 20, 90};
-  {1:SAC:=assertEquals}(190, {1:SAC:=sum(data)});
-  {1:SAC:=assertTrue}(190 == sum(data));
-  assertFalse(190 {1:SAC:=!=} sum(data));
-}
-```
-
 ## Syntax errors
 Given the following test case
 ```java
@@ -47,3 +33,11 @@ Given the following test case
 	}
 ```  
 Choose all the pictures that would cause a syntax error.
+
+## format of java file
+Fill in the blanks given that the class header is  
+`public class Abc {`
+
+The name of the class file is: {1:SAC:=Abc.java}  
+To compile the java program: {1:SAC:=javac} {1:SAC:=Abc.java}
+To run the java program from the command line: `java {1:SAC:=Abc}`
