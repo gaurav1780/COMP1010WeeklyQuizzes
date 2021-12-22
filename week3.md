@@ -30,7 +30,7 @@ data[3] = {1:SAC:=data[0]}
 Consider a function that returns the sum of all positive numbers between two indices. Pair the test case together with the best fit for what it tests. Assume the input for the function is in the format `(int[] data, int start, int end)`
 
 Test cases
-* {10, 20, 90, 70}, 1, 3 // Sum's the values incusive of both ranges.
+* {10, 20, 90, 70}, 1, 3 // Sum's the values inclusive of both ranges.
 * {10, 20, 90, 70, 5}, 1, 4 // Ensures the `end` limit is not hard coded.
 * {10, 20, 90, 70}, 0, 4 // Can handle invalid `end` value.
 * {10, 20, 90, 70}, -1, 2 // Can handle invalid `start` value.
