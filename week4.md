@@ -13,7 +13,7 @@ public class Lecture {
 }
 ```
 Complete the code that creates an object named `data` of class `Lecurer` that has the lecturer "Gaurav" and 100 students.  
-{1:SAC:=Lecture} {1:SAC:=data} = {1:SAC:=new} {1:SAC:=Lecture}({1:SAC:="Gaurav"}, {1:SAC:100});
+{1:SAC:=Lecture} {1:SAC:=data} = {1:SAC:=new} {1:SAC:=Lecture}({1:SAC:="Gaurav"}, {1:SAC:=100});
 
 ## local or class variables
 Consider the following class:
@@ -69,7 +69,7 @@ public int area() {
 What is the header of the method in the `Rectangle` class? {1:SAC:=public int area()}  
 What is the header of the constructor in the `Rectangle` class? {1:SAC:=public Rectangle(int w,int h)~=public Rectangle(int w, int h)}  
 
-## Memory diagrams
+## References and instances
 
 ### Q1
 Count the number of references and instances in the memory when the `System.out.println()` statement executes.
@@ -91,8 +91,8 @@ public class Client {
   System.out.println("Done");
 }
 ```
-Number of references = {1:SAC:=3}  
-Number of instances = {1:SAC:=2}  
+Number of references = {1:NM:=3}  
+Number of instances = {1:NM:=2}  
 
 ### Q2
 Count the number of references and instances in the memory when the `System.out.println()` statement executes.
@@ -101,10 +101,10 @@ public class Lecture {
   public int students;
   public int lecturerID;
 
-	public Lecture(int s, int l) {
+  public Lecture(int s, int l) {
     students = s;
     lecturerID = l;
-	}
+  }
 }
 
 public class Client {
@@ -119,5 +119,5 @@ public class Client {
   }
 }
 ```
-Number of references = {1:SAC:=3}  
-Number of instances = {1:SAC:=1}  
+Number of references = {1:NM:=3}  
+Number of instances = {1:NM:=1}  

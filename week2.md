@@ -34,7 +34,7 @@ Given the following test case
 ```  
 Choose all the pictures that would cause a syntax error.
 
-## format of java file
+## Run java file from command line
 Fill in the blanks given that the class header is  
 `public class Abc {`
 
