@@ -60,47 +60,36 @@ public int foo(int n) {
 Options: stack overflow error, infinite loop, returns a value successfully.
 
 ## Recursion with Arrays
-
-
-## DP - find better question
+Trace the method call where the initial call is foo([10, 70, 20, 30], 0, 40).
 
 ```java
-int[] lookup;
-public int fib(int n) {
-  if(lookup[n] != 0) {
-    return lookup[n];
+public boolean foo(int[]arr, int idx, int sum) {
+  if(sum == 0) {
+    return true;
+  } else if(sum < 0 || idx >= arr.length {
+    return false;
   }
-  lookup[n] = fib(n - 3); // Notice it's 3 NOT 2
-  lookup[n] = lookup[n] + fib(n - 1);
-  return lookup[n];
-}
-
-public void main(String[] args) {
-  lookup = new int[6];
-  lookup[1] = 1;
-  lookup[2] = 2;
-  fib(5);
+  if(foo(arr, idx + 1, sum - arr[idx])) {
+    return true;
+  }
+  return foo(arr, idx + 1, sum);
 }
 ```
 
-Trace the method call where the initial call is fib(5)
-
-fib(5) calls fib({1:NM:2})
-fib({1:NM:=2}) returns {1:NM:=2}
-lookup[5] = {1:NM:=2}
-fib({1:NM:=5}) calls fib({1:NM:=4})
-fib({1:NM:=4}) calls fib({1:NM:=1})
-fib({1:NM:=1}) returns {1:NM:=1}
-lookup[{1:NM:4}] = {1:NM:=1}
-fib({1:NM:=4}) calls fib({1:NM:=3})
-fib({1:NM:=3}) calls fib({1:NM:=0})
-fib({1:NM:=0}) returns {1:NM:=0}
-lookup[{1:NM:3}] = {1:NM:=0}
-fib({1:NM:=3}) calls fib({1:NM:=2})
-fib({1:NM:=2}) returns {1:NM:=2}
-lookup[{1:NM:3}] = {1:NM:=2}
-fib({1:NM:=3}) returns {1:NM:=2}
-lookup[{1:NM:4}] = {1:NM:=3}
-fib({1:NM:=4}) returns {1:NM:=3}
-lookup[{1:NM:5}] = {1:NM:=5}
-fib({1:NM:=5}) returns {1:NM:=5}
+foo([10, 70, 20, 30], 0, {1:NM:=40}) calls foo([10, 70, 20, 30], 1, {1:NM:=30})
+foo([10, 70, 20, 30], 1, {1:NM:=30}) calls foo([10, 70, 20, 30], 2, {1:NM:=-40})
+foo([10, 70, 20, 30], 2, {1:NM:=-40}) returns {1:SA:=false}
+foo([10, 70, 20, 30], 1, {1:NM:=30}) calls foo([10, 70, 20, 30], 2, {1:NM:=30})
+foo([10, 70, 20, 30], 2, {1:NM:=30}) calls foo([10, 70, 20, 30], 3, {1:NM:=10})
+foo([10, 70, 20, 30], 3, {1:NM:=10}) calls foo([10, 70, 20, 30], 4, {1:NM:=-20})
+foo([10, 70, 20, 30], 4, {1:NM:=-20}) returns {1:SA:=false}
+foo([10, 70, 20, 30], 3, {1:NM:=10}) calls foo([10, 70, 20, 30], 4, {1:NM:=10})
+foo([10, 70, 20, 30], 4, {1:NM:=10}) returns {1:SA:=false}
+foo([10, 70, 20, 30], 3, {1:NM:=10}) returns {1:SA:=false}
+foo([10, 70, 20, 30], 2, {1:NM:=30}) calls foo([10, 70, 20, 30], 3, {1:NM:=30})
+foo([10, 70, 20, 30], 3, {1:NM:=30}) calls foo([10, 70, 20, 30], 4, {1:NM:=0})
+foo([10, 70, 20, 30], 4, {1:NM:=0}) returns {1:SA:=true}
+foo([10, 70, 20, 30], 3, {1:NM:=30}) returns {1:SA:=true}
+foo([10, 70, 20, 30], 2, {1:NM:=30}) returns {1:SA:=true}
+foo([10, 70, 20, 30], 1, {1:NM:=30}) returns {1:SA:=true}
+foo([10, 70, 20, 30], 0, {1:NM:=40}) returns {1:SA:=true}
