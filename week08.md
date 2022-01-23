@@ -2,7 +2,7 @@
 
 ## Syntax of Lists
 Fill in the blanks in the code so that the comments correctly represents the list.
-The answers should not inculude any special characters.
+The answers should not include any special characters.
 
 
 #### Version 1
@@ -36,5 +36,5 @@ list.add({1:SA:=null}); //[20, null]
 list.{1:SA:=set}(list.{1:SA:=indexOf}(null), {1:NM:=10}); //[20, 10]
 list.{1:SA:=add}(70); //[20, 10, 70]
 list.{1:SA:=remove}(1); //[20, 70]
-list.add({1:NM:=1}, {1:NM:90}); //[20, 90, 70]
+list.add({1:NM:=1}, {1:NM:=90}); //[20, 90, 70]
 ```

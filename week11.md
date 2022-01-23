@@ -71,4 +71,4 @@ LinkedList
 * Removing a value in the middle of the list.
 
 Both
-* Finding the first occurance of a value in the list.
+* Finding the first occurrence of a value in the list.
